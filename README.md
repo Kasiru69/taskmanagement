@@ -1,10 +1,6 @@
 <h1>📱 Task Management</h1>
-<p>A brief description of what your app does.</p>
+<p>task management system designed to help you stay organized and boost productivity. Whether you're managing daily to-dos, work projects, or personal goals, Taskly makes it easy to add, edit, and delete tasks seamlessly.</p>
 
-<h1>🚀 Features</h1>
-<li>Feature 1</li>
-<li>Feature 2</li>
-<li>Feature 3</li>
 
 <h1>🛠 Installation & Setup</h1>
 
