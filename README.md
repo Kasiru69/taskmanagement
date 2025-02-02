@@ -1,5 +1,5 @@
 <h1>📱 Task Management</h1>
-<p>task management system designed to help you stay organized and boost productivity. Whether you're managing daily to-dos, work projects, or personal goals, Taskly makes it easy to add, edit, and delete tasks seamlessly.</p>
+<p>A task management system designed to help you stay organized and boost productivity. Whether you're managing daily to-dos, work projects, or personal goals, Taskly makes it easy to add, edit, and delete tasks seamlessly.</p>
 
 
 <h1>🛠 Installation & Setup</h1>
@@ -14,7 +14,7 @@
 <p><code>flutter doctor</code></p>
 
 <h1>2️⃣ Clone the Repository</h1>
-<p><code>git clone https://github.com/your-username/your-repo-name.git</code></p>
+<p><code>git clone https://github.com/kasiru69/taskmanagement.git</code></p>
 <p><code>cd your-repo-name</code></p>
 
 <h1>3️⃣ Install Dependencies</h1>
