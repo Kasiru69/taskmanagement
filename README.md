@@ -44,16 +44,4 @@
 <li>Make sure your emulator or physical device is connected and recognized by <code>flutter devices</code>.</li>
 <li>Run <code>flutter doctor</code> to diagnose setup problems.</li>
 
-<h1>📜 License</h1>
-<p><a href="LICENSE">MIT</a> (or any other license you prefer)</p>
 
-<h1>🙌 Contributing</h1>
-<p>If you want to contribute:</p>
-<li>Fork the repository</li>
-<li>Create a new branch (<code>git checkout -b feature-branch</code>)</li>
-<li>Make your changes and commit (<code>git commit -m "Added new feature"</code>)</li>
-<li>Push to the branch (<code>git push origin feature-branch</code>)</li>
-<li>Open a Pull Request</li>
-
-<h1>📬 Contact</h1>
-<p>For any issues or questions, feel free to open an issue or reach out at <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>
