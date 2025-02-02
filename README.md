@@ -1,4 +1,4 @@
-<h1>📱 Flutter App Name</h1>
+<h1>📱 Task Management</h1>
 <p>A brief description of what your app does.</p>
 
 <h1>🚀 Features</h1>
