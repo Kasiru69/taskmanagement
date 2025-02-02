@@ -15,7 +15,7 @@
 
 <h1>2️⃣ Clone the Repository</h1>
 <p><code>git clone https://github.com/kasiru69/taskmanagement.git</code></p>
-<p><code>cd your-repo-name</code></p>
+<p><code>cd taskmanagement</code></p>
 
 <h1>3️⃣ Install Dependencies</h1>
 <p><code>flutter pub get</code></p>
