@@ -25,7 +25,7 @@ class _TaskListScreenState extends ConsumerState<TaskListScreen> {
   @override
   void initState() {
     super.initState();
-    tasksFuture = _fetchTasks(); // Assign the Future to tasksFuture
+    tasksFuture = _fetchTasks();
   }
 
   void _applyFilter(String value) {
@@ -125,39 +125,54 @@ class _TaskListScreenState extends ConsumerState<TaskListScreen> {
                 key: Key(task.id),
                 onDismissed: (_) {
                   ref.read(tasksProvider.notifier).deleteTask(task.id);
+                  setState(() {
+                    tasksFuture=_fetchTasks();
+                  });
                 },
                 background: Container(
                   color: Colors.red,
                   alignment: Alignment.centerRight,
                   child: const Icon(Icons.delete, color: Colors.white),
                 ),
-                child: ListTile(
-                  title: Text(
-                    task.title,
-                    style: TextStyle(
-                      decoration: task.isCompleted
-                          ? TextDecoration.lineThrough
-                          : null,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: (task.priority=="high")?Colors.orange:((task.priority=="medium")?Colors.amberAccent:Colors.greenAccent)
+                    ),
+                    child: ListTile(
+                      title: Text(
+                        task.title,
+                        style: TextStyle(
+                          decoration: task.isCompleted
+                              ? TextDecoration.lineThrough
+                              : null,
+                        ),
+                      ),
+                      subtitle: Text(task.description),
+                      trailing: Checkbox(
+                        value: task.isCompleted,
+                        onChanged: (_) {
+                            setState(() {
+                              task.isCompleted=!task.isCompleted;
+                              ref.read(tasksProvider.notifier).toggleTaskCompletion(task.id);
+                            });
+                        },
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EditTaskScreen(task: task),
+                          ),
+                        ).then((_){
+                          setState(() {
+                            tasksFuture=_fetchTasks();
+                          });
+                        });
+                      },
                     ),
                   ),
-                  subtitle: Text(task.description),
-                  trailing: Checkbox(
-                    value: task.isCompleted,
-                    onChanged: (_) {
-                        setState(() {
-                          task.isCompleted=!task.isCompleted;
-                          ref.read(tasksProvider.notifier).toggleTaskCompletion(task.id);
-                        });
-                    },
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => EditTaskScreen(task: task),
-                      ),
-                    );
-                  },
                 ),
               );
             },
@@ -171,7 +186,12 @@ class _TaskListScreenState extends ConsumerState<TaskListScreen> {
             MaterialPageRoute(
               builder: (context) => const AddTaskScreen(),
             ),
-          );
+          ).then((_){
+            setState(() {
+              tasksFuture=_fetchTasks();
+              print("yooo hineysingh ${tasksFuture}");
+            });
+          });
         },
         child: const Icon(Icons.add),
       ),
