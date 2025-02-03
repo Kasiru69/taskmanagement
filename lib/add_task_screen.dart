@@ -18,6 +18,7 @@ class AddTaskScreen extends ConsumerWidget {
     final user = FirebaseAuth.instance.currentUser;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Add Task'),
       ),
